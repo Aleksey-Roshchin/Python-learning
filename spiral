@@ -1,0 +1,42 @@
+n = 10
+spiral = [[0 for _ in range(n)] for _ in range(n)]
+
+i,j = 0, 0
+x = 1
+spiral[i][j] = x
+while True:
+    
+    if 0 < i - 1 < n and spiral[i - 1][j] == 0 and i > 0:                   # up
+        while i > 0 and spiral[i - 1][j] == 0:
+            x += 1
+            spiral[i - 1][j] = x
+            i -= 1
+
+    elif 0 < j + 1 < n and spiral[i][j + 1] == 0:                           # right
+        while j < n - 1 and spiral[i][j + 1] == 0:
+            x += 1
+            spiral[i][j + 1] = x
+            j += 1
+
+    elif 0 < i + 1 < n and spiral[i + 1][j] == 0:                           # down
+        while i < n - 1 and spiral[i + 1][j] == 0:
+            x += 1
+            spiral[i + 1][j] = x
+            i += 1
+
+    elif 0 < j - 1 < n and spiral[i][j - 1] == 0:                           # left
+        while j > 0 and spiral[i][j - 1] == 0:
+            x += 1
+            spiral[i][j - 1] = x
+            j -= 1
+
+    else:
+        break
+
+
+for i in range(n):
+    for j in range(n):
+        spiral[i][j] = str(spiral[i][j]).ljust(3)
+
+for el in spiral:
+    print(*el)
