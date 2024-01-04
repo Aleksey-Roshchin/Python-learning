@@ -1,0 +1,23 @@
+def issubnumber(number, subnumber):
+	n = 0
+	b_copy = subnumber
+	while b_copy > 0:
+		b_copy //= 10
+		n += 1
+	
+	razriad = 1		
+	for _ in range(n):
+		razriad *= 10
+		
+	count = 0
+	while number >= razriad:
+		if number % razriad == subnumber:
+			count += 1
+		number //= 10
+	
+	return count
+
+a = 12311123111
+b = 11
+
+print(issubnumber(a, b))
