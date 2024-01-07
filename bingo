@@ -1,7 +1,7 @@
 from random import sample
 
-numbers = sample(range(1, 75), 24)
-bingo = [[0 if j == 2 and i == 2 else numbers[i + j] for i in range(5)] for j in range(5)]
+numbers = sample(range(1, 75), 25)
+bingo = [[0 if j == 2 and i == 2 else numbers[i + 5 * j] for i in range(5)] for j in range(5)]
 
 for el in bingo:
         for c in el:
