@@ -1,0 +1,28 @@
+import turtle as t
+
+def circle(d):
+	t.pendown()
+	t.circle(d)
+	t.penup()
+
+t.speed(10)
+t.pensize(2)
+t.penup()
+#t.pensize()
+circle(20)
+t.pendown()
+t.goto(0, -110)
+t.penup()
+t.goto(0, -150)
+circle(200)
+circle(100)
+t.goto(-80, 40)
+circle(20)
+t.forward(160)
+circle(20)
+t.goto(-180, 180)
+circle(60)
+t.goto(180, 180)
+circle(60)
+
+t.done()
